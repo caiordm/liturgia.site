@@ -1,8 +1,8 @@
 <script>
-    import { dev } from '$app/environment';
-    import { inject } from '@vercel/analytics';
+    import { dev } from "$app/environment";
+    import { inject } from "@vercel/analytics";
 
-    inject({ mode: dev ? 'development' : 'production' });
+    inject({ mode: dev ? "development" : "production" });
 
     import "../app.css";
 </script>
@@ -11,7 +11,8 @@
 
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Kalnia:wght@100..700&display=swap");
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+    @import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
     :global(html) {
         scroll-behavior: smooth;
         transition: 1s ease;
