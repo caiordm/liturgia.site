@@ -116,7 +116,7 @@
             >
         </a>
         <span
-            >Liturgia.me é feito por <a
+            >Liturgia.site é feito por <a
                 href="github.com/caiordm"
                 class="font-medium">caiordm</a
             ></span

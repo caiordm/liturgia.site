@@ -8,7 +8,7 @@
 <header
     class="bg-white rounded-3xl border border-gray-100 flex justify-between items-center shadow-xl p-3 pl-6 pr-6 mt-4 w-4/5"
 >
-    <a href="/"><h1 class="font-medium text-xl">Liturgia.me 📖</h1></a>
+    <a href="/"><h1 class="font-medium text-xl">Liturgia.site 📖</h1></a>
     <ul class="flex gap-4 text-md sm:text-lg">
         <a href="#liturgia" class="transition ease-in-out hover:text-blue-400"><li>Liturgia do dia</li></a>
         <a href="#sobre" class="transition ease-in-out hover:text-blue-400"><li>Sobre</li></a>
