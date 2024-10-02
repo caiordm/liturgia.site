@@ -2,7 +2,6 @@
     import Header from "../lib/Header.svelte";
     /** @type {import('./$types').PageData} */
     export let data;
-    console.log(data);
 
     let leituraSelecionada = data.json.primeiraLeitura; // Valor inicial
     let leituraAtual = 0;
@@ -30,6 +29,12 @@
         isActive = Array(leituras.length).fill(false); // Limpa todos os active
         isActive[index] = true;
     };
+
+    function adicionarQuebrasDeLinha(texto) {
+        return texto.replace(/—/g, "\n—");
+    }
+
+    let textoComQuebras = adicionarQuebrasDeLinha(data.json.salmo.texto);
 </script>
 
 <section class="flex flex-col items-center w-full">
@@ -73,28 +78,42 @@
             <h1 class="font-medium">{leituraSelecionada}</h1>
         {:else}
             <h1 class="font-medium">{leituraSelecionada.referencia}</h1>
+
             <h2>
-                {#if leituraSelecionada.refrao}
-                    <strong class="font-medium">Refrão: </strong>
-                    {leituraSelecionada.refrao}
-                {:else}
-                    {leituraSelecionada.titulo}
-                {/if}
+                {leituraSelecionada.refrao
+                    ? "Refrão: " + leituraSelecionada.refrao
+                    : leituraSelecionada.titulo}
             </h2>
-            <span>{leituraSelecionada.texto}</span>
-            <span class=""> - Palavra do Senhor</span>
-            <span class="font-medium"> - Graças a Deus</span>
+
+            <!-- Caso seja evangelho, mostrar resposta da comunidade 'Gloria a Vós, Senhor'-->
+            {#if leituraAtual === 3}
+                <span class="font-medium"> - Glória a Vós, Senhor</span>
+            {/if}
+
+            <!-- Texto da Leitura, caso for Salmo, mostrar o texto com quebras de linha -->
+            <p>{leituraAtual === 1 ? textoComQuebras : leituraSelecionada.texto}</p>
+
+            <!-- Mostrar respostas corretas de acordo com a Leitura -->
+            {#if leituraAtual === 0 || leituraAtual === 2}
+                <span class=""> - Palavra do Senhor</span>
+                <span class="font-medium"> - Graças a Deus</span>
+            {:else if leituraAtual === 3}
+                <span class=""> - Palavra da Salvação</span>
+                <span class="font-medium"> - Glória a Vós, Senhor</span>
+            {/if}
         {/if}
     </div>
 
     <footer
         id="sobre"
-        class="lg:absolute lg:bottom-0 flex flex-col mt-8 items-center text-gray-600 text-xs border-t-2 border-gray-100 border-opacity-10 w-full pt-2 mb-4"
+        class="lg:absolute lg:bottom-0 flex flex-col mt-8 items-center text-gray-600 text-xs border-t-2 border-gray-100 border-opacity-10 w-full pt-2 mb-4 mt-4"
     >
         <span class="mb-4">Projeto para fins de evangelização 🙏 📖 ✞ 🕊️</span>
 
         <a href="https://github.com/Dancrf/liturgia-diaria" class="font-medium">
-            Clique aqui para saber mais sobre a <strong class="font-medium">API</strong>
+            Clique aqui para saber mais sobre a <strong class="font-medium"
+                >API</strong
+            >
         </a>
         <span
             >Liturgia.me é feito por <a
