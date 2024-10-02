@@ -92,12 +92,10 @@
         class="lg:absolute lg:bottom-0 flex flex-col mt-8 items-center text-gray-600 text-xs border-t-2 border-gray-100 border-opacity-10 w-full pt-2 mb-4"
     >
         <span class="mb-4">Projeto para fins de evangelização 🙏 📖 ✞ 🕊️</span>
-        <span
-            >API de Litúrgia Diária por <a
-                href="https://github.com/Dancrf/liturgia-diaria"
-                class="font-medium">Danyel</a
-            ></span
-        >
+
+        <a href="https://github.com/Dancrf/liturgia-diaria" class="font-medium">
+            Clique aqui para saber mais sobre a <strong class="font-medium">API</strong>
+        </a>
         <span
             >Liturgia.me é feito por <a
                 href="github.com/caiordm"
