@@ -10,8 +10,8 @@
 >
     <a href="/"><h1 class="font-medium text-xl">Liturgia.me 📖</h1></a>
     <ul class="flex gap-4 text-md sm:text-lg">
-        <li>Liturgia do dia</li>
-        <li>Sobre</li>
+        <a href="#liturgia" class="transition ease-in-out hover:text-blue-400"><li>Liturgia do dia</li></a>
+        <a href="#sobre" class="transition ease-in-out hover:text-blue-400"><li>Sobre</li></a>
     </ul>
     <div class="hamburguer-icon">
         <Hamburger class="hamburguer-icon" bind:open color="white" />
