@@ -63,8 +63,7 @@
             <span class="font-medium">Compartilhe: </span>
             <a
                 class="bg-green-500 p-2 rounded-full border border-green-600"
-                href="whatsapp://send?text=Faça sua meditação diária e veja a Liturgia de hoje ({data
-                    .json.data})! https://liturgia.site"
+                href="whatsapp://send?text=Você já leu a Liturgia de hoje?✨ Não perca essa reflexão para o seu dia! Acesse agora e compartilhe também: https://liturgia.site "
                 data-action="share/whatsapp/share"
                 target="_blank"
             >
@@ -177,6 +176,8 @@
         class="flex flex-col mt-8 items-center text-gray-600 text-xs border-t-2 border-gray-100 border-opacity-10 w-full pt-2 mb-4 mt-4"
     >
         <span class="mb-4">Projeto para fins de evangelização 🙏 📖 ✞ 🕊️</span>
+
+        <span class="mb-4 w-4/5 text-center">Liturgia.site existe para que os fiéis possam ler a palavra diária de forma simples e concisa, muito obrigado por utilizar. <br> Deus Abençoe-nos!</span>
 
         <a href="https://github.com/Dancrf/liturgia-diaria" class="font-medium">
             Clique aqui para saber mais sobre a <strong class="font-medium"
