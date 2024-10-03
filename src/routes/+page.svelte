@@ -1,5 +1,9 @@
 <script>
     import Header from "../lib/Header.svelte";
+    import WhatsappLogo from "../images/whatsapp.png";
+    import FacebookLogo from "../images/facebook.png";
+    import TelegramLogo from "../images/telegram.png";
+
     /** @type {import('./$types').PageData} */
     export let data;
 
@@ -35,20 +39,80 @@
     }
 
     let textoComQuebras = adicionarQuebrasDeLinha(data.json.salmo.texto);
+
+    // (function (d, s, id) {
+    //     var js,
+    //         fjs = d.getElementsByTagName(s)[0];
+    //     if (d.getElementById(id)) return;
+    //     js = d.createElement(s);
+    //     js.id = id;
+    //     js.src =
+    //         "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+    //     fjs.parentNode.insertBefore(js, fjs);
+    // })(document, "script", "facebook-jssdk");
 </script>
 
 <section class="flex flex-col items-center w-full">
     <Header></Header>
-
+    <div
+        id="compartilhe"
+        class="flex items-center justify-between gap-2 text-gray-950 mt-8 w-4/5"
+    >
+        <span class="text-sm sm:text-lg">Data: {data.json.data}</span>
+        <div class="flex items-center gap-2 text-gray-950">
+            <span class="font-medium">Compartilhe: </span>
+            <a
+                class="bg-green-500 p-2 rounded-full border border-green-600"
+                href="whatsapp://send?text=Faça sua meditação diária e veja a Liturgia de hoje ({data
+                    .json.data})! https://liturgia.site"
+                data-action="share/whatsapp/share"
+                target="_blank"
+            >
+                <img
+                    class="max-w-4 lg:max-w-5"
+                    src={WhatsappLogo}
+                    alt="Compartilhe no Whatsapp"
+                    title="Compartilhe no Whatsapp"
+                />
+            </a>
+            <a
+                class="bg-fbblue p-2 rounded-full border border-blue-600"
+                href="https://www.facebook.com/dialog/share?app_id=145634995501895&display=popup&href=https%3A%2F%2Fliturgia.site&text=Veja a litúrgia de hoje!"
+                target="_blank"
+            >
+                <img
+                    class="max-w-4 lg:max-w-5"
+                    src={FacebookLogo}
+                    alt="Compartilhe no Facebook"
+                    title="Compartilhe no Facebook"
+                />
+            </a>
+        </div>
+    </div>
     <div
         id="liturgia"
-        class="flex flex-col items-start text-gray-950 mt-8 w-4/5"
+        class="flex flex-col gap-3 items-start text-gray-950 mt-4 w-4/5"
     >
+        <span class="flex items-center gap-2 text-sm sm:text-lg"
+            >Cor litúrgica: {data.json.cor}
+            <div
+                class="w-4 h-4 rounded-full border border-gray-200 {data.json
+                    .cor === 'Vermelho'
+                    ? 'bg-red-800'
+                    : ''} {data.json.cor === 'Branco' ? 'bg-white' : ''} {data
+                    .json.cor === 'Verde'
+                    ? 'bg-green-800'
+                    : ''} {data.json.cor === 'Roxo'
+                    ? 'bg-purple-900'
+                    : ''} {data.json.cor === 'Rosa' ? 'bg-pink-400' : ''} {data
+                    .json.cor === 'Preto'
+                    ? 'bg-black'
+                    : ''}"
+            /></span
+        >
         <h2 class="text-md sm:text-xl font-medium">
             Litúrgia: {data.json.liturgia}
         </h2>
-        <span class="text-sm sm:text-lg">Data: {data.json.data}</span>
-        <span class="text-sm sm:text-lg">Cor litúrgica: {data.json.cor}</span>
     </div>
 
     <div
@@ -91,7 +155,11 @@
             {/if}
 
             <!-- Texto da Leitura, caso for Salmo, mostrar o texto com quebras de linha -->
-            <p>{leituraAtual === 1 ? textoComQuebras : leituraSelecionada.texto}</p>
+            <p>
+                {leituraAtual === 1
+                    ? textoComQuebras
+                    : leituraSelecionada.texto}
+            </p>
 
             <!-- Mostrar respostas corretas de acordo com a Leitura -->
             {#if leituraAtual === 0 || leituraAtual === 2}
@@ -106,7 +174,7 @@
 
     <footer
         id="sobre"
-        class="lg:absolute lg:bottom-0 flex flex-col mt-8 items-center text-gray-600 text-xs border-t-2 border-gray-100 border-opacity-10 w-full pt-2 mb-4 mt-4"
+        class="flex flex-col mt-8 items-center text-gray-600 text-xs border-t-2 border-gray-100 border-opacity-10 w-full pt-2 mb-4 mt-4"
     >
         <span class="mb-4">Projeto para fins de evangelização 🙏 📖 ✞ 🕊️</span>
 

@@ -8,6 +8,7 @@
 {#if open}
     <div class="bg-white font-medium rounded-3xl border border-gray-100 text-blue-500 flex justify-between items-center shadow-xl p-3 pl-6 pr-6 mt-4 w-4/5">
         <a href="#liturgia">Litúrgia Do Dia</a>
+        <a href="#compartilhe">Compartilhe</a>
         <a href="#sobre">Sobre</a>
     </div>
 

@@ -11,6 +11,7 @@
     <a href="/"><h1 class="font-medium text-xl">Liturgia.site 📖</h1></a>
     <ul class="flex gap-4 text-md sm:text-lg">
         <a href="#liturgia" class="transition ease-in-out hover:text-blue-400"><li>Liturgia do dia</li></a>
+        <a href="#compartilhe" class="transition ease-in-out hover:text-blue-400"><li>Compartilhe</li></a>
         <a href="#sobre" class="transition ease-in-out hover:text-blue-400"><li>Sobre</li></a>
     </ul>
     <div class="hamburguer-icon">
