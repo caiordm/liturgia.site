@@ -12,7 +12,6 @@
         <a href="#sobre">Sobre</a>
     </div>
 
-    <hr transition:scale={{ duration: 750, easing: quadOut, opacity: 0 }} />
 {/if}
 
 <style>

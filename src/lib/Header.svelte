@@ -15,7 +15,7 @@
         <a href="#sobre" class="transition ease-in-out hover:text-blue-400"><li>Sobre</li></a>
     </ul>
     <div class="hamburguer-icon">
-        <Hamburger class="hamburguer-icon" bind:open color="white" />
+        <Hamburger class="hamburguer-icon" bind:open type="collapse" --layer-width='30px' --layer-height='3px' />
     </div>
 </header>
 <Menu class="hamburguer-menu" bind:open />
